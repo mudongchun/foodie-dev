@@ -82,7 +82,7 @@ public class PassportController {
     }
 
     @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
-    @RequestMapping("/login")
+    @PostMapping("/login")
     public IMOOCJSONResult login(@RequestBody UserBO userBO, HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
 
@@ -117,4 +117,11 @@ public class PassportController {
         return userResult;
     }
 
+    @ApiOperation(value = "用户退出", notes = "用户退出", httpMethod = "POST")
+    @PostMapping("/logout")
+    public IMOOCJSONResult logout(@RequestParam String userId, HttpServletRequest request,
+                                  HttpServletResponse response){
+        CookieUtils.deleteCookie(request, response, "user");
+        return IMOOCJSONResult.ok();
+    }
 }
