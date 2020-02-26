@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public boolean queryUsernameIsExist(String username) {
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++query username");
         Example userExample = new Example(Users.class);
         Example.Criteria userCriteria = userExample.createCriteria();
         userCriteria.andEqualTo("username", username);
@@ -43,7 +42,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public Users createUser(UserBO userBO) {
-        System.out.println("--------------------------"+ userBO.getUsername() + "--------------------");
         String userId = sid.nextShort();
         Users user = new Users();
         user.setId(userId);
