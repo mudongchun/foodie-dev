@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface CategoryMapperCustom {
 
-    public List<CategoryVO> getSubCatList(Integer rootCatId);
+    public List<CategoryVO> getSubCatLists(Integer rootCatId);
 
     public List<NewItemsVO> getSixNewItemsLazy(@Param("paramsMap") Map<String, Object> map);
 }

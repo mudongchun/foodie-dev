@@ -41,7 +41,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public List<CategoryVO> getSubCatList(Integer rootCatId) {
-        return categoryMapperCustom.getSubCatList(rootCatId);
+        return categoryMapperCustom.getSubCatLists(rootCatId);
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
