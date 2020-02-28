@@ -1,8 +1,10 @@
 package com.imooc.service;
 
-import com.imooc.pojo.*;
+import com.imooc.pojo.Items;
+import com.imooc.pojo.ItemsImg;
+import com.imooc.pojo.ItemsParam;
+import com.imooc.pojo.ItemsSpec;
 import com.imooc.pojo.vo.CommentLevelCountsVO;
-import com.imooc.pojo.vo.ItemCommentVO;
 import com.imooc.pojo.vo.ShopcartVO;
 import com.imooc.utils.PagedGridResult;
 
@@ -62,7 +64,7 @@ public interface ItemService {
      * @return
      */
     public PagedGridResult searhItems(String keywords, String sort,
-                                              Integer page, Integer pageSize);
+                                      Integer page, Integer pageSize);
 
     /**
      * 根据分类id搜索商品列表

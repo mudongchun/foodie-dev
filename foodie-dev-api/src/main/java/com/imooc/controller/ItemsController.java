@@ -1,10 +1,11 @@
 package com.imooc.controller;
 
-import com.imooc.enums.YesOrNo;
-import com.imooc.pojo.*;
-import com.imooc.pojo.vo.*;
-import com.imooc.service.CarouselService;
-import com.imooc.service.CategoryService;
+import com.imooc.pojo.Items;
+import com.imooc.pojo.ItemsImg;
+import com.imooc.pojo.ItemsParam;
+import com.imooc.pojo.ItemsSpec;
+import com.imooc.pojo.vo.CommentLevelCountsVO;
+import com.imooc.pojo.vo.ItemInfoVO;
 import com.imooc.service.ItemService;
 import com.imooc.utils.IMOOCJSONResult;
 import com.imooc.utils.PagedGridResult;
@@ -88,11 +89,7 @@ public class ItemsController extends BaseController {
             pageSize = COMMON_PAGE_SIZE;
         }
 
-        PagedGridResult grid = itemService.queryPagedComments(itemId,
-                                                                level,
-                                                                page,
-                                                                pageSize);
-
+        PagedGridResult grid = itemService.queryPagedComments(itemId, level, page, pageSize);
         return IMOOCJSONResult.ok(grid);
     }
 
@@ -121,9 +118,9 @@ public class ItemsController extends BaseController {
         }
 
         PagedGridResult grid = itemService.searhItems(keywords,
-                                                        sort,
-                                                        page,
-                                                        pageSize);
+                sort,
+                page,
+                pageSize);
 
         return IMOOCJSONResult.ok(grid);
     }
